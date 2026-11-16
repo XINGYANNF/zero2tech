@@ -5,11 +5,11 @@
   box-shadow: var(--shadow);
 }
 
-/* 卡片默认可见 —— 动画只是锦上添花。
-   即使 anime.js 加载失败或 JS 出错，内容也不会消失。
-   入场动画的初始状态由 cards.js 在运行时设置。 */
+/* 卡片的初始状态：藏起来 + 微微下沉，等动画把它们抬起来。
+   cards.js 在浏览器加载完后用 anime.js 给它们做 stagger 入场。 */
 .card {
-  will-change: opacity, transform;
+  opacity: 0;
+  transform: translateY(24px);
 }
 
 .section-kicker {
